@@ -8,13 +8,46 @@
     <title>SBSMUN2018</title>
   </head>
   <body>
+    <div id=navbar>
+      <a id="close" class="nav-top">
+          <i class="fas fa-times-circle"></i>
+      </a>
+      <a href="#addressals" class="nav-item">Addressals</a>
+      <a href="#committees"  class="nav-item">Committees</a>
+      <a href="#fourth-est" class="nav-item">Fourth Estate</a>
+      <a href="register.html" class="nav-item">Register</a>
+      <script>
+          var close_btn = document.getElementById("close");
+          close_btn.onclick = function() {
+              document.getElementById("navbar").style.transform = "translateX(-100%)";
+              // document.getElementById("navbar").style.display = "none";
+          }
+      </script>
+    </div>
     <div id="landing">
+      <a id="open">
+        <i class="fas fa-bars"></i>
+      </a>
+      <script>
+          var open_btn = document.getElementById("open");
+          open_btn.onclick = function() {
+              document.getElementById("navbar").style.transform = "translateX(0)";
+          }
+      </script>
       <div class="group">
         <img src="sbsmunlogo.png" alt="">
-        <h1>SBSMUN2018</h1>
+        <h1 id="banner">SBSMUN2018</h1>
+        <script>
+          var trick = document.getElementById("banner");
+          trick.onclick = function() {
+            trick.addClass = "font-effect-anaglyph";
+          }
+        </script>
         <h3>27<sup>th</sup> - 29<sup>th</sup> July</h3>
       </div>
-        <i style="grid-column-end:-2; font-size: 12px; color: white; justify-self: center; align-self: center; text-align: center;" class="fas fa-chevron-down"></i>
+      <a id="down" href="#addressals">
+        <i class="fas fa-chevron-down"></i>
+      </a>
     </div>
     <!-- Addressals -->
     <div id="addressals">
@@ -56,10 +89,32 @@
     <!-- Fourth Estate -->
     <div id="fourth-est">
       <h1>Fourth Estate</h1>
-      <img></img>
-      <p>"Journalism can never be silent: that is its greatest virtue and its greatest fault. It must speak, and speak immediately, while the echoes of wonder, the claims of triumph and the signs of horror are still in the air."<br> - Henry Anatole Grunwald.</p>
-      <p>The press, now more than ever, is the voice of, for, and by the people. The ability to influence public opinion, to bring issues shrouded in secrecy to light, to test the truth and report it, are the hallmarks of a member of the Fourth Estate.<p>
-      <p>Journalists, cartoonists, and photographers, a story must be told. It is up to you to decide how to tell it.</p>
+      <img src="4estatecover.jpg" alt="">
+      <div class="text">
+        <p>"Journalism can never be silent: that is its greatest virtue and its greatest fault. It must speak, and speak immediately, while the echoes of wonder, the claims of triumph and the signs of horror are still in the air."<br> - Henry Anatole Grunwald.</p>
+        <p>The press, now more than ever, is the voice of, for, and by the people. The ability to influence public opinion, to bring issues shrouded in secrecy to light, to test the truth and report it, are the hallmarks of a member of the Fourth Estate.</p>
+        <p>Journalists, cartoonists, and photographers, a story must be told. It is up to you to decide how to tell it.</p>
+      </div>
     </div>
+    <!-- Register button -->
+    <div id="registration">
+      <a href="#"><h1>Register</h1></a>
+    </div>
+    <!-- Footer -->
+    <footer>
+      <h3>Contact Us</h3>
+      <div id="address">
+        <p><strong>Address:</strong></p>
+        <p>Step By Step School<br>A-10, Sector 132<br>Taj Expressway<br>Noida - 201304</p>
+      </div>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3505.9333813919047!2d77.37595231507989!3d28.511651982465636!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce6281d06e50d%3A0x1604ff30bb8d2595!2sStep+by+Step+School!5e0!3m2!1sen!2sin!4v1491760022122" style="border:0" allowfullscreen="" width="90%" height="200" frameborder="0"></iframe>
+      <div id="contact">
+        <p><strong>Telephone:</strong></p>
+        <p>0120-3857300</p>
+        <p><strong>Email:</strong></p>
+        <p>shruti.mishra@sbs-school.org</p>
+      </div>
+      <a href="http://sbs-school.org/sbsweb/index.cfm" target="_blank"><p>Step By Step School</p></a>
+    </footer>
   </body>
 </html>

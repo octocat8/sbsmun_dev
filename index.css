@@ -10,6 +10,7 @@
 }
 /* General CSS styles */
 body {
+    display: -ms-grid;
     display: grid;
     grid-gap: 10px;
 }
@@ -21,25 +22,71 @@ h1 {
   font-family: 'Oswald', sans-serif;
   font-size: 84px;
   text-transform: uppercase;
+  text-align: center;
+  padding: 10px;
 }
 h3 {
   font-family: 'Montserrat', sans-serif;
   font-size: 24px;
+  text-align: center;
+  padding: 5px;
 }
 p {
   font-family: 'Montserrat', sans-serif;
   font-size: 13px;
+  text-align: justify; line-height: 200%;
+}
+/* Navbar */
+#navbar {
+  background-color: #000;
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 10px;
+  height: 100vh;
+  z-index: 5;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-width: 100vw;
+  grid-auto-rows: 7vh;
+  position: fixed;
+  -webkit-transform: translateX(-100%);
+      -ms-transform: translateX(-100%);
+          transform: translateX(-100%);
+  -webkit-transition: -webkit-transform 0.5s ease;
+  transition: -webkit-transform 0.5s ease;
+  -o-transition: transform 0.5s ease;
+  transition: transform 0.5s ease;
+  transition: transform 0.5s ease, -webkit-transform 0.5s ease;
+}
+#navbar a {
+  font-family: "Montserrat", sans-serif;
+  text-decoration: none;
+  color: #fff;
+  letter-spacing: 2px;
+  padding: 10px;
+  font-size: 24px;
+}
+#close {
+  font-size: 24px;
+  top: 10px;
+  left: 10px;
+  cursor: pointer;
 }
 /* Landing */
 #landing {
+  text-align: center;
   height: 100vh;
   background-image: url('daniel-sandvik-540127-unsplash.jpg');
   background-size: cover;
   background-position: center;
   max-width: 100vw;
+  display: -ms-grid;
   display: grid;
-  grid-template-rows: 80vh 10vh 10vh;
-  grid-template-columns: 10vw 80vw 10vw;
+  -ms-grid-rows: 1fr 8fr 1fr;
+      grid-template-rows: 1fr 8fr 1fr;
+  -ms-grid-columns: 1fr 8fr 1fr;
+      grid-template-columns: 1fr 8fr 1fr;
   justify-items: center;
   /* align-items: center; */
 }
@@ -49,60 +96,174 @@ p {
 }
 .group {
   grid-column: 1/-1;
+  -ms-grid-row: 2;
+      grid-row-start: 2;
   margin-top: 10vh;
-  text-align: center;
   color: white;
 }
 .group sup { text-transform: none;}
 
-#landing #scroll{
-  grid-row-end: -1;
-  align-self: center;
-  color: white;
+#landing a {
   font-size: 24px;
-}
-.button {
-  text-align: center;
-  align-self: center;
-  justify-self: center;
-  text-transform: uppercase;
   color: white;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  text-align: center;
 }
 #down {
+  grid-column-end:-2;
   grid-row-end: -1;
-  grid-column-end: -2;
+}
+#open {
+  cursor: pointer;
+  -ms-flex-item-align: stretch;
+      -ms-grid-row-align: stretch;
+      align-self: stretch;
+  -ms-grid-column-align: stretch;
+      justify-self: stretch;
+  z-index: 3;
+  position:fixed;
+  top: 0;
+  left: 0;
+  /* border: 1px solid var(--surya); */
+  background-color: var(--surya);
+  padding: 10px;
 }
 /* Adresses */
 #addressals {
+  max-width: 100vw;
+  display: -ms-grid;
   display: grid;
   grid-gap: 30px;
   justify-items: center;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .addressal {
+  display: -ms-grid;
   display: grid;
   grid-gap: 16px;
-  text-align: center;
   max-width: 90vw;
 }
-.addressal p {text-align: justify; line-height: 200%;}
 /* Committees */
 #committees {
+  max-width: 100vw;
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 10px;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-grid-columns: (300px)[auto-fit];
+      grid-template-columns: repeat(auto-fit, 300px);
+}
+#committees h1 {
+  grid-column: 1 / -1;
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+.committee {
+  display: -ms-grid;
+  display: grid;
+  cursor: pointer;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 300px;
+  width: 300px;
+  background-color: #aaa;
+}
+/* Fourth Estate */
+#fourth-est {
+  max-width: 100vw;
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 30px;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  grid-template-columns: 1fr 1fr;
+}
+#fourth-est p, #fourth-est img {
+  max-width: 45vw;
+}
+#fourth-est h1 {grid-column: 1/-1;}
+#fourth-est img {
+  max-height: 50vh;
+}
+/* Registration/Other section */
+#registration {
+  max-width: 100vw;
+  display: -ms-grid;
   display: grid;
   grid-gap: 10px;
   justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+#registration a {
+  border: 1px solid var(--bhanu);
+  padding: 10px;
+  text-decoration: none;
+  color: #000;
+  /* max-width: 80vw; */
+}
+/* Footer */
+footer {
+  background-color: #000;
+  color: #fff;
+  max-width: 100vw;
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 10px;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 30px 0;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+footer p {
   text-align: center;
 }
-
-.committee {
-  display: grid;
-  cursor: pointer;
-  align-items: center;
-  height: 200px;
-  width: 200px;
-  background-color: #aaa;
+footer a{
+  text-transform: none;
+  text-decoration: none;
+  color: #fff;
+}
+footer h3 {
+  grid-column: 1/-1;
 }
 /* Media Queries */
+@media all and (max-width:1250px) {
+  /* committees */
+  #committees {
+    -ms-grid-columns: (200px)[auto-fit];
+        grid-template-columns: repeat(auto-fit, 200px);
+  }
+  .committee {
+    height: 200px;
+    width: 200px;
+  }
+  /* fourth-est */
+  #fourth-est {
+    grid-template-columns: 1fr;
+  }
+  #fourth-est p, #fourth-est img {
+    max-width: 90vw;
+  }
+}
+@media all and (max-width: 600px) {
+  /* footer */
+  footer {
+    grid-template-columns: 1fr;
+  }
+}
 @media all and (max-width: 500px) {
   h1{
     font-size: 60px;
