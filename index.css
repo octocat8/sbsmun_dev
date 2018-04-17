@@ -200,7 +200,7 @@ p {
 }
 #fourth-est p {
   float: left;
-  max-width: 40vw;
+  max-width: 50vw;
 }
 #fourth-est h1 {grid-column: 1/-1;}
 #fourth-est img {
@@ -269,18 +269,17 @@ footer h3 {
     height: 200px;
     width: 200px;
   }
-  /* fourth-est */
-  #fourth-est {
-    grid-template-columns: 1fr;
-  }
-  #fourth-est p, #fourth-est img {
-    max-width: 90vw;
-  }
 }
 @media all and (max-width: 1070px) {
   /* footer */
   #navbar a {
     font-size: 18px;
+  }
+  #fourth-est {grid-template-columns: 1fr}
+  #fourth-est img {justify-self: center;}
+  #fourth-est p {
+    max-width: 80vw;
+    float: none;
   }
 }
 @media all and (max-width: 870px) {
