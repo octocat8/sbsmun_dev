@@ -12,7 +12,7 @@
 body {
     display: -ms-grid;
     display: grid;
-    grid-gap: 10px;
+    grid-gap: 20px;
 }
 a {
     text-decoration: none;
@@ -23,7 +23,7 @@ h1 {
   font-size: 84px;
   text-transform: uppercase;
   text-align: center;
-  padding: 10px;
+  padding: 30px;
 }
 h3 {
   font-family: 'Montserrat', sans-serif;
@@ -38,46 +38,36 @@ p {
 }
 /* Navbar */
 #navbar {
-  background-color: #000;
+  background-color: #333333AA;
   display: -ms-grid;
   display: grid;
   grid-gap: 10px;
-  height: 100vh;
+  width: 100vw;
   z-index: 5;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-content: center;
   max-width: 100vw;
-  grid-auto-rows: 7vh;
+  grid-template-columns: repeat(4, 1fr);
   position: fixed;
-  -webkit-transform: translateX(-100%);
-      -ms-transform: translateX(-100%);
-          transform: translateX(-100%);
-  -webkit-transition: -webkit-transform 0.5s ease;
-  transition: -webkit-transform 0.5s ease;
-  -o-transition: transform 0.5s ease;
-  transition: transform 0.5s ease;
-  transition: transform 0.5s ease, -webkit-transform 0.5s ease;
 }
 #navbar a {
   font-family: "Montserrat", sans-serif;
   text-decoration: none;
+  text-align: center;
   color: #fff;
   letter-spacing: 2px;
   padding: 10px;
   font-size: 24px;
+  font-weight: 900;
+  cursor: pointer;
 }
 #close {
-  font-size: 24px;
-  top: 10px;
-  left: 10px;
-  cursor: pointer;
+  display: none;
 }
 /* Landing */
 #landing {
   text-align: center;
   height: 100vh;
-  background-image: url('daniel-sandvik-540127-unsplash.jpg');
+  background-image: url('globe.jpg');
   background-size: cover;
   background-position: center;
   max-width: 100vw;
@@ -92,13 +82,13 @@ p {
 }
 
 #landing img {
-  height: 75px;
+  height: 150px;
 }
 .group {
+  margin-top: 10vh;
   grid-column: 1/-1;
   -ms-grid-row: 2;
       grid-row-start: 2;
-  margin-top: 10vh;
   color: white;
 }
 .group sup { text-transform: none;}
@@ -131,7 +121,14 @@ p {
   /* border: 1px solid var(--surya); */
   background-color: var(--surya);
   padding: 10px;
+  display: none;
 }
+
+#banner {
+  line-height: 75%;
+}
+
+#landing h3 {font-family: 'Montserrat', sans-serif; font-size: 36px;}
 /* Adresses */
 #addressals {
   max-width: 100vw;
@@ -146,8 +143,21 @@ p {
 .addressal {
   display: -ms-grid;
   display: grid;
+  grid-template-columns: 1fr 2fr;
   grid-gap: 16px;
   max-width: 90vw;
+}
+.left {
+  display: grid;
+  /* grid-auto-rows:  */
+}
+.addressal img {
+  grid-column-start: 1;
+  grid-row: 1 / span 2;
+  max-height: 150px;
+  align-content: center;
+  justify-self: center;
+  border-radius: 100%;
 }
 /* Committees */
 #committees {
@@ -186,14 +196,16 @@ p {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 2fr 3fr;
 }
-#fourth-est p, #fourth-est img {
-  max-width: 45vw;
+#fourth-est p {
+  float: left;
+  max-width: 40vw;
 }
 #fourth-est h1 {grid-column: 1/-1;}
 #fourth-est img {
   max-height: 50vh;
+  justify-self: right;
 }
 /* Registration/Other section */
 #registration {
@@ -201,14 +213,18 @@ p {
   display: -ms-grid;
   display: grid;
   grid-gap: 10px;
+  background-color: var(--bhanu);
+  margin-bottom: -20px;
   justify-items: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
+#registration h1 {
+  font-size: 60px;
+}
 #registration a {
-  border: 1px solid var(--bhanu);
-  padding: 10px;
+/*   padding: 10px; */
   text-decoration: none;
   color: #000;
   /* max-width: 80vw; */
@@ -230,13 +246,16 @@ footer {
 }
 footer p {
   text-align: center;
+  font-size: 18px;
 }
 footer a{
   text-transform: none;
   text-decoration: none;
+  grid-column: 1/-1;
   color: #fff;
 }
 footer h3 {
+  font-size: 36px;
   grid-column: 1/-1;
 }
 /* Media Queries */
@@ -258,8 +277,34 @@ footer h3 {
     max-width: 90vw;
   }
 }
-@media all and (max-width: 600px) {
+@media all and (max-width: 1070px) {
   /* footer */
+  #navbar a {
+    font-size: 18px;
+  }
+}
+@media all and (max-width: 870px) {
+  /* footer */
+  #navbar a {
+    font-size: 12px;
+  }
+  .addressal {
+    grid-template-columns: 1fr;
+  }
+}
+@media all and (max-width: 660px) {
+  /* footer */
+  #open {display:block;transition: transform 0.5s ease;}
+  #close {display: block;}
+  #navbar {
+    background: #333;
+    width: 50vw;
+    height: 100vh;
+    grid-template-columns: 1fr;
+    grid-auto-rows: 15vh;
+    transform: translateX(-100%);
+    transition: transform 0.5s ease;
+  }
   footer {
     grid-template-columns: 1fr;
   }

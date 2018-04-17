@@ -8,42 +8,36 @@
     <title>SBSMUN2018</title>
   </head>
   <body>
-    <div id=navbar>
-      <a id="close" class="nav-top">
-          <i class="fas fa-times-circle"></i>
-      </a>
+    <div id="navbar">
+      <a id="close"><i class="fas fa-times"></i></a>
       <a href="#addressals" class="nav-item">Addressals</a>
       <a href="#committees"  class="nav-item">Committees</a>
       <a href="#fourth-est" class="nav-item">Fourth Estate</a>
       <a href="register.html" class="nav-item">Register</a>
-      <script>
-          var close_btn = document.getElementById("close");
-          close_btn.onclick = function() {
-              document.getElementById("navbar").style.transform = "translateX(-100%)";
-              // document.getElementById("navbar").style.display = "none";
-          }
-      </script>
     </div>
+    <script type="text/javascript">
+      var close_btn = document.getElementById('close');
+      close_btn.onclick = function() {
+        document.getElementById('navbar').style.transform = "translateX(-100%)";
+        open_btn.style.transform = "translateX(0vw)";
+      }
+    </script>
     <div id="landing">
       <a id="open">
         <i class="fas fa-bars"></i>
       </a>
-      <script>
-          var open_btn = document.getElementById("open");
-          open_btn.onclick = function() {
-              document.getElementById("navbar").style.transform = "translateX(0)";
-          }
+      <script type="text/javascript">
+      var open_btn = document.getElementById('open');
+      open_btn.onclick = function() {
+        document.getElementById('navbar').style.transform = "translateX(0)";
+        open_btn.style.transform = "translateX(50vw)";
+        console.log("hello");
+      }
       </script>
       <div class="group">
         <img src="sbsmunlogo.png" alt="">
         <h1 id="banner">SBSMUN2018</h1>
-        <script>
-          var trick = document.getElementById("banner");
-          trick.onclick = function() {
-            trick.addClass = "font-effect-anaglyph";
-          }
-        </script>
-        <h3>27<sup>th</sup> - 29<sup>th</sup> July</h3>
+        <h3>27<sup>th</sup> - 29<sup>th</sup> July 2018</h3>
       </div>
       <a id="down" href="#addressals">
         <i class="fas fa-chevron-down"></i>
@@ -53,18 +47,27 @@
     <div id="addressals">
         <h1>Addressals</h1>
       <div class="addressal">
-        <h3>Firdaus Mohandas</h3>
-        <h3><em>Secretary General</em></h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam consectetur quam cursus, placerat turpis in, condimentum enim. Suspendisse nulla mi, fermentum id felis suscipit, ullamcorper posuere nulla. Nulla nunc justo, consectetur vel efficitur quis, consectetur ut purus. Vivamus at magna nibh. Etiam vel sem orci. In maximus aliquet condimentum. Aliquam cursus purus eu lacus rutrum, vitae tempus orci elementum.</p>
-        <p>Suspendisse nulla elit, semper vel libero quis, pretium facilisis arcu. Fusce et elit vel metus molestie congue. Etiam viverra, elit vel interdum viverra, dui nunc euismod tellus, et ornare libero lacus at felis. Etiam sed fermentum magna. Fusce nec mauris ligula. Mauris et purus ullamcorper, tempor velit malesuada, tempus dui. Nullam fermentum erat nibh, id consequat libero interdum nec. Curabitur luctus at enim rhoncus pellentesque. Nulla dapibus feugiat egestas. Etiam vitae maximus lorem, vel rhoncus lacus.</p>
-        <p>Donec placerat erat et purus euismod blandit. Nam malesuada mi a ante viverra, ut convallis lacus eleifend. Integer pellentesque neque eu neque fermentum pellentesque. Quisque sapien ipsum, accumsan eget bibendum quis, dapibus et augue. Nam sit amet laoreet velit. Pellentesque commodo justo non sem venenatis auctor. Etiam luctus ex vitae neque dignissim, eget rutrum ante mollis. Etiam fringilla lacus aliquet elit rhoncus, vitae cursus leo luctus. Curabitur volutpat nibh nunc, non laoreet tellus blandit at. </p>
+        <div class="left">
+          <h3>Firdaus Mohandas</h3>
+          <h3><em>Secretary General</em></h3>
+          <img src="example.jpg">
+        </div>
+        <div class="right">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam consectetur quam cursus, placerat turpis in, condimentum enim. Suspendisse nulla mi, fermentum id felis suscipit, ullamcorper posuere nulla. Nulla nunc justo, consectetur vel efficitur quis, consectetur ut purus. Vivamus at magna nibh. Etiam vel sem orci. In maximus aliquet condimentum. Aliquam cursus purus eu lacus rutrum, vitae tempus orci elementum.</p>
+          <p>Suspendisse nulla elit, semper vel libero quis, pretium facilisis arcu. Fusce et elit vel metus molestie congue. Etiam viverra, elit vel interdum viverra, dui nunc euismod tellus, et ornare libero lacus at felis. Etiam sed fermentum magna. Fusce nec mauris ligula. Mauris et purus ullamcorper, tempor velit malesuada, tempus dui. Nullam fermentum erat nibh, id consequat libero interdum nec. Curabitur luctus at enim rhoncus pellentesque. Nulla dapibus feugiat egestas. Etiam vitae maximus lorem, vel rhoncus lacus.</p>
+          <p>Donec placerat erat et purus euismod blandit. Nam malesuada mi a ante viverra, ut convallis lacus eleifend. Integer pellentesque neque eu neque fermentum pellentesque. Quisque sapien ipsum, accumsan eget bibendum quis, dapibus et augue. Nam sit amet laoreet velit. Pellentesque commodo justo non sem venenatis auctor. Etiam luctus ex vitae neque dignissim, eget rutrum ante mollis. Etiam fringilla lacus aliquet elit rhoncus, vitae cursus leo luctus. Curabitur volutpat nibh nunc, non laoreet tellus blandit at. </p>
+        </div>
       </div>
       <div class="addressal">
-        <h3>Srinjan Gupta</h3>
-        <h3><em>Deputy Secretary General</em></h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam consectetur quam cursus, placerat turpis in, condimentum enim. Suspendisse nulla mi, fermentum id felis suscipit, ullamcorper posuere nulla. Nulla nunc justo, consectetur vel efficitur quis, consectetur ut purus. Vivamus at magna nibh. Etiam vel sem orci. In maximus aliquet condimentum. Aliquam cursus purus eu lacus rutrum, vitae tempus orci elementum.</p>
-        <p>Suspendisse nulla elit, semper vel libero quis, pretium facilisis arcu. Fusce et elit vel metus molestie congue. Etiam viverra, elit vel interdum viverra, dui nunc euismod tellus, et ornare libero lacus at felis. Etiam sed fermentum magna. Fusce nec mauris ligula. Mauris et purus ullamcorper, tempor velit malesuada, tempus dui. Nullam fermentum erat nibh, id consequat libero interdum nec. Curabitur luctus at enim rhoncus pellentesque. Nulla dapibus feugiat egestas. Etiam vitae maximus lorem, vel rhoncus lacus.</p>
-        <p>Donec placerat erat et purus euismod blandit. Nam malesuada mi a ante viverra, ut convallis lacus eleifend. Integer pellentesque neque eu neque fermentum pellentesque. Quisque sapien ipsum, accumsan eget bibendum quis, dapibus et augue. Nam sit amet laoreet velit. Pellentesque commodo justo non sem venenatis auctor. Etiam luctus ex vitae neque dignissim, eget rutrum ante mollis. Etiam fringilla lacus aliquet elit rhoncus, vitae cursus leo luctus. Curabitur volutpat nibh nunc, non laoreet tellus blandit at. </p>
+        <div class="left">
+          <h3>Srinjan Gupta</h3>
+          <h3><em>Deputy Secretary General</em></h3>
+        </div>
+        <div class="right">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam consectetur quam cursus, placerat turpis in, condimentum enim. Suspendisse nulla mi, fermentum id felis suscipit, ullamcorper posuere nulla. Nulla nunc justo, consectetur vel efficitur quis, consectetur ut purus. Vivamus at magna nibh. Etiam vel sem orci. In maximus aliquet condimentum. Aliquam cursus purus eu lacus rutrum, vitae tempus orci elementum.</p>
+          <p>Suspendisse nulla elit, semper vel libero quis, pretium facilisis arcu. Fusce et elit vel metus molestie congue. Etiam viverra, elit vel interdum viverra, dui nunc euismod tellus, et ornare libero lacus at felis. Etiam sed fermentum magna. Fusce nec mauris ligula. Mauris et purus ullamcorper, tempor velit malesuada, tempus dui. Nullam fermentum erat nibh, id consequat libero interdum nec. Curabitur luctus at enim rhoncus pellentesque. Nulla dapibus feugiat egestas. Etiam vitae maximus lorem, vel rhoncus lacus.</p>
+          <p>Donec placerat erat et purus euismod blandit. Nam malesuada mi a ante viverra, ut convallis lacus eleifend. Integer pellentesque neque eu neque fermentum pellentesque. Quisque sapien ipsum, accumsan eget bibendum quis, dapibus et augue. Nam sit amet laoreet velit. Pellentesque commodo justo non sem venenatis auctor. Etiam luctus ex vitae neque dignissim, eget rutrum ante mollis. Etiam fringilla lacus aliquet elit rhoncus, vitae cursus leo luctus. Curabitur volutpat nibh nunc, non laoreet tellus blandit at. </p>
+        </div>
       </div>
     </div>
     <!-- Committees -->
