@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="register.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300|Oswald:700&effect=anaglyph" rel="stylesheet">
+    <script defer src="fontawesome-all.js"></script>
+    <title>Register | SBSMUN2018</title>
+  </head>
+  <body>
+    <div id="header">
+      <img src="sbsmunlogo.png" alt="">
+      <h1 id="banner">SBSMUN2018</h1>
+      <h3>27<sup>th</sup> - 29<sup>th</sup> July 2018</h3>
+    </div>
+    <script type="text/javascript">
+      var delegatebtn = document.getElementById("delegate");
+      delegatebtn.onclick = function() {
+        document.getElementById("delegation").style.display = "none";
+      }
+    </script>
+    <div id="split">
+      <div id="delegate">
+        <h3>Individual Applicants</h3>
+      </div>
+      <div id="delegation">
+        <h3>School Delegations</h3>
+      </div>
+    </div>
+  </body>
+</html>
