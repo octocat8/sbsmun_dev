@@ -71,24 +71,76 @@
       </div>
     </div>
     <!-- Committees -->
+    <div class="overlay">
+      <div class="data">
+        <button><i class="fas fa-times"></i></button>
+        <h1></h1>
+        <h3></h3>
+        <a href="#"><p>Background guide</p></a>
+      </div>
+    </div>
     <div id="committees">
       <h1>Committees</h1>
       <div class="committee">
         <h3>UNHRC</h3>
+        <div class="info">
+          <p>This is going to be a sample agenda</p>
+          <a href="#"></a>
+        </div>
       </div>
       <div class="committee">
         <h3>UNSC</h3>
+        <div class="info">
+          <p>This is going to be a sample agenda</p>
+          <a href="#"></a>
+        </div>
       </div>
       <div class="committee">
         <h3>UNGA</h3>
+        <div class="info">
+          <p>This is going to be a sample agenda</p>
+          <a href="#"></a>
+        </div>
       </div>
       <div class="committee">
         <h3>InterPol</h3>
+        <div class="info">
+          <p>This is going to be a sample agenda</p>
+          <a href="#"></a>
+        </div>
       </div>
       <div class="committee">
         <h3>Stakeholders Meet on Censorship</h3>
+        <div class="info">
+          <p>This is going to be a sample agenda</p>
+          <a href="#"></a>
+        </div>
       </div>
     </div>
+    <script type="text/javascript">
+      var overlay = document.querySelector('.overlay');
+      var overlayTitle = overlay.querySelector("h1");
+      var overlayAgenda = overlay.querySelector("h3");
+      var overlayLink = overlay.querySelector("a");
+      var overlayClose = overlay.querySelector("button");
+      const items = document.querySelectorAll('.committee');
+      function handleClick(e) {
+        const title = e.currentTarget.querySelector("h3").firstChild.textContent;
+        const agenda = e.currentTarget.querySelector("p").firstChild.textContent;
+        const link = e.currentTarget.querySelector("a").href;
+        overlayLink.href = link;
+        overlayTitle.innerHTML = title;
+        overlayAgenda.innerHTML = agenda;
+        overlay.style.display = "grid";
+        console.log(overlay);
+      }
+      function close() {
+        overlay.style.display = "none";
+        console.log("close");
+      }
+      items.forEach(item => item.addEventListener('click', handleClick ));
+      overlayClose.addEventListener("click", close);
+    </script>
     <!-- Fourth Estate -->
     <div id="fourth-est">
       <h1>Fourth Estate</h1>
