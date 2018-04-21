@@ -13,12 +13,6 @@
       <h1 id="banner">SBSMUN2018</h1>
       <h3>27<sup>th</sup> - 29<sup>th</sup> July 2018</h3>
     </div>
-    <script type="text/javascript">
-      var delegatebtn = document.getElementById("delegate");
-      delegatebtn.onclick = function() {
-        document.getElementById("delegation").style.display = "none";
-      }
-    </script>
     <div id="split">
       <div id="delegate">
         <h3>Individual Applicants</h3>
@@ -26,6 +20,62 @@
       <div id="delegation">
         <h3>School Delegations</h3>
       </div>
+      <div id="delegate">
+        <h3>Fourth Estate</h3>
+      </div>
     </div>
+    <!-- Forms -->
+    <div id="delegateform">
+      <i class="fas fa-times"></i><br><br>
+      <form action="index.html" method="post">
+        <h3>Name</h3><input type="text" name="delegate_name" value=""><br>
+        <h3>School Name</h3><input type="text" name="school_name" value=""><br>
+        <h3>School Address</h3><textarea name="school_addr" rows="4"></textarea><br>
+        <h3>Phone No.</h3><input type="text" name="mob_num" value=""><br>
+        <h3>Email Id</h3><input type="email" name="email_id" value=""><br>
+        <h3>Committee</h3>
+        <select name="committee">
+          <option value="committee1">Committee 1</option>
+          <option value="committee2">Committee 2</option>
+          <option value="committee3">Committee 3</option>
+          <option value="committee4">Committee 4</option>
+          <option value="committee5">Committee 5</option>
+        </select><br>
+        <h3>Country Preference #1</h3><input type="text" name="pref1" value=""><br>
+        <h3>Country Preference #2</h3><input type="text" name="pref1" value=""><br>
+        <h3>Country Preference #3</h3><input type="text" name="pref1" value=""><br>
+        <input type="submit" name="indiv_submit" value="SUBMIT"><br>
+      </form>
+    </div>
+    <div id="delegationform">
+      <i class="fas fa-times"></i><br><br>
+      <form action="index.html" method="post">
+        <h3>Teacher</h3><input type="text" name="delegate_name" value=""><br>
+        <h3>Teacher (2)</h3><input type="text" name="delegate_name" value=""><br>
+        <h3>Student Coordinator</h3><input type="text" name="delegate_name" value=""><br>
+        <h3>School Name</h3><input type="text" name="school_name" value=""><br>
+        <h3>School Address</h3><textarea name="school_addr" rows="4"></textarea><br>
+        <h3>Phone No.</h3><input type="text" name="mob_num" value=""><br>
+        <h3>Email Id</h3><input type="email" name="email_id" value=""><br>
+        <h3># of Students</h3><input type="text" name="email_id" value=""><br>
+        <h3>Student List</h3>
+        <textarea name="studentlist" rows="8"  cols="45">Name | Committee | Previous MUN Experience,
+Name | Committee | Previous MUN Experience,
+        </textarea>
+        <input type="submit" name="deleg_submit" value="SUBMIT"><br>
+      </form>
+    </div>
+    <script type="text/javascript">
+      var delegatebtn = document.getElementById("delegate");
+      var delegationbtn = document.getElementById("delegation")
+      delegatebtn.onclick = function() {
+        document.getElementById("delegation").style.display = "none";
+        document.getElementById("delegateform").style.display = "grid";
+      }
+      delegationbtn.onclick = function() {
+        document.getElementById("delegate").style.display = "none";
+        document.getElementById("delegationform").style.display = "grid";
+      }
+    </script>
   </body>
 </html>
