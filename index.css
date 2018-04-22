@@ -315,6 +315,9 @@ footer h3 {
   .addressal {
     grid-template-columns: 1fr;
   }
+  .data h1 {
+    font-size: 60px;
+  }
 }
 @media all and (max-width: 660px) {
   /* footer */
@@ -332,10 +335,16 @@ footer h3 {
   footer {
     grid-template-columns: 1fr;
   }
+  .data h1 {
+    font-size: 48px;
+  }
 }
 @media all and (max-width: 500px) {
   h1{
     font-size: 60px;
+  }
+  .data h1 {
+    font-size: 32px;
   }
 }
 
