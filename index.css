@@ -303,7 +303,7 @@ footer h3 {
   #fourth-est {grid-template-columns: 1fr}
   #fourth-est img {justify-self: center;}
   #fourth-est p {
-    max-width: 80vw;
+    max-width: 90vw;
     float: none;
   }
 }
@@ -346,10 +346,25 @@ footer h3 {
   .data h1 {
     font-size: 32px;
   }
+  h3 {
+    font-size: 32px;
+  }
 }
-
+@media all and (max-width: 410px) {
+  #committees {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+  .committee {
+    width: 90vw;
+  }
+}
 @media all and (max-width: 360px) {
   h1{
+    padding: 0 15px;
     font-size: 55px;
+  }
+  .addressal p {
+    max-width: 85vw;
   }
 }
