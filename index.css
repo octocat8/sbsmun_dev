@@ -245,9 +245,9 @@ p {
       -ms-flex-align: center;
           align-items: center;
 }
-#registration h1 {
+/* #registration h1 {
   font-size: 60px;
-}
+} */
 #registration a {
 /*   padding: 10px; */
   text-decoration: none;
