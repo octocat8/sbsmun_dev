@@ -239,20 +239,15 @@ p {
   display: grid;
   grid-gap: 10px;
   background-color: var(--bhanu);
-  margin-bottom: -20px;
   justify-items: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
-/* #registration h1 {
-  font-size: 60px;
-} */
 #registration a {
-/*   padding: 10px; */
+  padding: 10px; 
   text-decoration: none;
   color: #000;
-  /* max-width: 80vw; */
 }
 /* Footer */
 footer {
