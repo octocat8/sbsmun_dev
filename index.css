@@ -46,7 +46,7 @@ p {
   z-index: 5;
   align-content: center;
   max-width: 100vw;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   position: fixed;
 }
 #navbar a {
@@ -190,10 +190,10 @@ p {
   display: -ms-grid;
   display: grid;
   grid-gap: 10px;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -ms-grid-columns: (300px)[auto-fit];
-      grid-template-columns: repeat(auto-fit, 300px);
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-grid-columns: (1fr)[5];
+      grid-template-columns: repeat(5, 1fr);
 }
 #committees h1 {
   grid-column: 1 / -1;
@@ -207,8 +207,9 @@ p {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  justify-self: center;
   height: 300px;
-  width: 300px;
+  width: 250px;
   background-color: #aaa;
 }
 /* Fourth Estate */
@@ -243,9 +244,33 @@ p {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-bottom: -20px;
 }
-#registration a {
-  padding: 10px; 
+#registration .container {
+  display:grid;
+  max-width: 80vw;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(3,100px);
+  justify-items: center;
+}
+#registration .container h1 {
+  grid-column: 1/-1;
+  margin: 0;
+  padding: 0;
+}
+
+#delegate , #delegation{
+  grid-column: span 3; grid-row-start: 2;
+}
+#cartoonist, #journalist, #photographer{
+  grid-column: span 2; grid-row-start: 3;
+}
+#registration .container h3 {
+  border: 1px solid black;
+  padding: 20px;
+}
+#registration .container a {
+  padding: 5px;
   text-decoration: none;
   color: #000;
 }
@@ -323,7 +348,7 @@ footer h3 {
     width: 50vw;
     height: 100vh;
     grid-template-columns: 1fr;
-    grid-auto-rows: 15vh;
+    grid-auto-rows: 12vh;
     transform: translateX(-100%);
     transition: transform 0.5s ease;
   }
@@ -332,6 +357,16 @@ footer h3 {
   }
   .data h1 {
     font-size: 48px;
+  }
+}
+@media all and (max-width: 900px) {
+  #registration .container {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 100px;
+  }
+  #registration .container div {
+    grid-column: span 1;
+    grid-row-start: auto;
   }
 }
 @media all and (max-width: 500px) {
