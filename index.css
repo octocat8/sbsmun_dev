@@ -248,7 +248,7 @@ p {
 }
 #registration .container {
   display:grid;
-  max-width: 80vw;
+  width: 80vw;
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: repeat(3,100px);
   justify-items: center;
@@ -267,7 +267,7 @@ p {
 }
 #registration .container h3 {
   border: 1px solid black;
-  padding: 20px;
+  padding: 10px;
 }
 #registration .container a {
   padding: 5px;
@@ -378,6 +378,16 @@ footer h3 {
   }
   h3 {
     font-size: 32px;
+  }
+  #registration .container {
+    grid-auto-rows: 16vh;
+  }
+  #registration .container div {
+    grid-column: span 1;
+    grid-row-start: auto;
+  }
+  #registration .container h3 {
+    font-size: 16px;
   }
 }
 @media all and (max-width: 410px) {
