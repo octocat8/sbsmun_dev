@@ -249,7 +249,7 @@ p {
 #registration .container {
   display:grid;
   width: 80vw;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(3,100px);
   justify-items: center;
 }
@@ -260,10 +260,10 @@ p {
 }
 
 #delegate , #delegation{
-  grid-column: span 3; grid-row-start: 2;
+  grid-column: span 1; grid-row-start: 2;
 }
-#cartoonist, #journalist, #photographer{
-  grid-column: span 2; grid-row-start: 3;
+#cartoonist, #journalist{
+  grid-column: span 1; grid-row-start: 3;
 }
 #registration .container h3 {
   border: 1px solid black;
