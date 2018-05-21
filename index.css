@@ -282,7 +282,7 @@ p {
 #registration .container a {
   padding: 5px;
   text-decoration: none;
-  color: #000;
+  color: var(--bhaskar);
 }
 /* Footer */
 footer {
