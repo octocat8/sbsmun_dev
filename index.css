@@ -212,7 +212,7 @@ p {
   justify-self: center;
   height: 300px;
   width: 250px;
-  background-color: #aaa;
+  background-color: var(--surya);
 }
 /* Fourth Estate */
 #fourth-est {
@@ -256,7 +256,7 @@ p {
   display: -ms-grid;
   display: grid;
   grid-gap: 10px;
-  background-color: var(--bhanu);
+  background-color: var(--surya);
   justify-items: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -279,10 +279,15 @@ p {
   border: 1px solid black;
   padding: 10px;
 }
+#out{
+  grid-column: 1/-1;
+  grid-row: span 2;
+  align-self: center;
+}
 #registration .container a {
   padding: 5px;
   text-decoration: none;
-  color: var(--bhaskar);
+  color: #000;
 }
 /* Footer */
 footer {
