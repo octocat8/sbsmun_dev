@@ -1,6 +1,5 @@
 * {
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
@@ -12,7 +11,6 @@
 }
 /* General CSS styles */
 body {
-    display: -ms-grid;
     display: grid;
     grid-gap: 20px;
 }
@@ -41,7 +39,6 @@ p {
 /* Navbar */
 #navbar {
   background-color: #333333AA;
-  display: -ms-grid;
   display: grid;
   grid-gap: 10px;
   width: 100vw;
@@ -73,12 +70,9 @@ p {
   background-size: cover;
   background-position: center;
   max-width: 100vw;
-  display: -ms-grid;
   display: grid;
-  -ms-grid-rows: 1fr 8fr 1fr;
-      grid-template-rows: 1fr 8fr 1fr;
-  -ms-grid-columns: 1fr 8fr 1fr;
-      grid-template-columns: 1fr 8fr 1fr;
+  grid-template-rows: 1fr 8fr 1fr;
+  grid-template-columns: 1fr 8fr 1fr;
   justify-items: center;
   /* align-items: center; */
 }
@@ -89,7 +83,6 @@ p {
 .group {
   margin-top: 10vh;
   grid-column: 1/-1;
-  -ms-grid-row: 2;
       grid-row-start: 2;
   color: white;
 }
@@ -98,11 +91,8 @@ p {
 #landing a {
   font-size: 24px;
   color: white;
-  -ms-grid-column-align: center;
-      justify-self: center;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+  justify-self: center;
+  align-self: center;
   text-align: center;
 }
 #down {
@@ -111,11 +101,8 @@ p {
 }
 #open {
   cursor: pointer;
-  -ms-flex-item-align: stretch;
-      -ms-grid-row-align: stretch;
-      align-self: stretch;
-  -ms-grid-column-align: stretch;
-      justify-self: stretch;
+  align-self: stretch;
+  justify-self: stretch;
   z-index: 3;
   position:fixed;
   top: 0;
@@ -134,16 +121,12 @@ p {
 /* Adresses */
 #addressals {
   max-width: 100vw;
-  display: -ms-grid;
   display: grid;
   grid-gap: 30px;
   justify-items: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
 }
 .addressal {
-  display: -ms-grid;
   display: grid;
   grid-template-columns: 1fr 2fr;
   grid-gap: 16px;
@@ -189,41 +172,31 @@ p {
 /* Committees */
 #committees {
   max-width: 100vw;
-  display: -ms-grid;
   display: grid;
   grid-gap: 10px;
-  -ms-flex-pack: center;
-      justify-content: center;
-  -ms-grid-columns: (1fr)[5];
-      grid-template-columns: repeat(5, 1fr);
+  justify-content: center;
+  grid-template-columns: repeat(3, 1fr);
 }
 #committees h1 {
   grid-column: 1 / -1;
-  -ms-grid-column-align: center;
-      justify-self: center;
+  justify-self: center;
 }
 .committee {
-  display: -ms-grid;
   display: grid;
   cursor: pointer;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   justify-self: center;
   height: 300px;
-  width: 250px;
+  width: 400px;
   background-color: var(--surya);
 }
 /* Fourth Estate */
 #fourth-est {
   max-width: 100vw;
-  display: -ms-grid;
   display: grid;
   grid-gap: 30px;
   justify-items: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   grid-template-columns: 2fr 3fr;
 }
 #fourth-est p {
@@ -253,14 +226,11 @@ p {
 /* Registration/Other section */
 #registration {
   max-width: 100vw;
-  display: -ms-grid;
   display: grid;
   grid-gap: 10px;
   background-color: var(--surya);
   justify-items: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   margin-bottom: -20px;
 }
 #registration .container {
@@ -294,13 +264,10 @@ footer {
   background-color: #000;
   color: #fff;
   max-width: 100vw;
-  display: -ms-grid;
   display: grid;
   grid-gap: 10px;
   justify-items: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   padding: 30px 0;
   grid-template-columns: 1fr 1fr 1fr;
 }
@@ -321,10 +288,13 @@ footer h3 {
 /* Media Queries */
 @media all and (max-width:1250px) {
   /* committees */
-  #committees {
-    -ms-grid-columns: (200px)[auto-fit];
-        grid-template-columns: repeat(auto-fit, 200px);
+  .committee {
+    height: 300px;
+    width: 300px;
   }
+}
+@media all and (max-width:975px) {
+  /* committees */
   .committee {
     height: 200px;
     width: 200px;
@@ -415,8 +385,6 @@ footer h3 {
     grid-template-columns: 1fr;
   }
   #secretariat h3 {font-size: 30px;}
-}
-@media all and (max-width: 410px) {
   #committees {
     grid-template-columns: 1fr;
     justify-items: center;
@@ -424,6 +392,9 @@ footer h3 {
   .committee {
     width: 90vw;
   }
+}
+@media all and (max-width: 410px) {
+  
 }
 @media all and (max-width: 360px) {
   h1{
