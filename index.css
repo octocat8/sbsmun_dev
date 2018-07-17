@@ -1,5 +1,6 @@
-* {
-    box-sizing: border-box;
+ * {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
@@ -11,6 +12,7 @@
 }
 /* General CSS styles */
 body {
+    display: -ms-grid;
     display: grid;
     grid-gap: 20px;
 }
@@ -39,13 +41,16 @@ p {
 /* Navbar */
 #navbar {
   background-color: #333333AA;
+  display: -ms-grid;
   display: grid;
   grid-gap: 10px;
   width: 100vw;
   z-index: 5;
-  align-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
   max-width: 100vw;
-  grid-template-columns: repeat(7, 1fr);
+  -ms-grid-columns: (1fr)[7];
+      grid-template-columns: repeat(7, 1fr);
   position: fixed;
 }
 #navbar a {
@@ -70,9 +75,12 @@ p {
   background-size: cover;
   background-position: center;
   max-width: 100vw;
+  display: -ms-grid;
   display: grid;
-  grid-template-rows: 1fr 8fr 1fr;
-  grid-template-columns: 1fr 8fr 1fr;
+  -ms-grid-rows: 1fr 8fr 1fr;
+      grid-template-rows: 1fr 8fr 1fr;
+  -ms-grid-columns: 1fr 8fr 1fr;
+      grid-template-columns: 1fr 8fr 1fr;
   justify-items: center;
   /* align-items: center; */
 }
@@ -83,7 +91,8 @@ p {
 .group {
   margin-top: 10vh;
   grid-column: 1/-1;
-      grid-row-start: 2;
+      -ms-grid-row: 2;
+          grid-row-start: 2;
   color: white;
 }
 .group sup { text-transform: none;}
@@ -91,18 +100,26 @@ p {
 #landing a {
   font-size: 24px;
   color: white;
-  justify-self: center;
-  align-self: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
   text-align: center;
 }
 #down {
+  -ms-grid-column-span:-2;
   grid-column-end:-2;
+  -ms-grid-row-span: -1;
   grid-row-end: -1;
 }
 #open {
   cursor: pointer;
-  align-self: stretch;
-  justify-self: stretch;
+  -ms-flex-item-align: stretch;
+      -ms-grid-row-align: stretch;
+      align-self: stretch;
+  -ms-grid-column-align: stretch;
+      justify-self: stretch;
   z-index: 3;
   position:fixed;
   top: 0;
@@ -121,27 +138,38 @@ p {
 /* Adresses */
 #addressals {
   max-width: 100vw;
+  display: -ms-grid;
   display: grid;
   grid-gap: 30px;
   justify-items: center;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .addressal {
+  display: -ms-grid;
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  -ms-grid-columns: 1fr 2fr;
+      grid-template-columns: 1fr 2fr;
   grid-gap: 16px;
   max-width: 90vw;
 }
 .left {
+  display: -ms-grid;
   display: grid;
   /* grid-auto-rows:  */
 }
 .addressal img {
-  grid-column-start: 1;
+  -ms-grid-column: 1;
+      grid-column-start: 1;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
   grid-row: 1 / span 2;
   max-height: 150px;
-  align-content: center;
-  justify-self: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
   border-radius: 100%;
 }
 /* overlay */
@@ -152,10 +180,13 @@ p {
   z-index: 20;
   background-color: #333333aa;
   justify-items: center;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   display:none;
 }
 .overlay .open {
+  display: -ms-grid;
   display: grid;
 }
 
@@ -172,20 +203,29 @@ p {
 /* Committees */
 #committees {
   max-width: 100vw;
+  display: -ms-grid;
   display: grid;
   grid-gap: 10px;
-  justify-content: center;
-  grid-template-columns: repeat(3, 1fr);
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
 }
 #committees h1 {
   grid-column: 1 / -1;
-  justify-self: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
 }
 .committee {
+  display: -ms-grid;
   display: grid;
   cursor: pointer;
-  align-items: center;
-  justify-self: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
   height: 300px;
   width: 400px;
   background-color: var(--surya);
@@ -193,11 +233,15 @@ p {
 /* Fourth Estate */
 #fourth-est {
   max-width: 100vw;
+  display: -ms-grid;
   display: grid;
   grid-gap: 30px;
   justify-items: center;
-  align-items: center;
-  grid-template-columns: 2fr 3fr;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-grid-columns: 2fr 3fr;
+      grid-template-columns: 2fr 3fr;
 }
 #fourth-est p {
   float: left;
@@ -206,37 +250,48 @@ p {
 #fourth-est h1 {grid-column: 1/-1;}
 #fourth-est img {
   max-height: 50vh;
-  justify-self: right;
+  -ms-grid-column-align: right;
+      justify-self: right;
 }
 /* Secretariat */
 #secretariat {
+  display:-ms-grid;
   display:grid;
   grid-gap: 10px;
-  grid-template-columns: repeat(4, 1fr);
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
   grid-auto-rows: 150px;
 }
 #secretariat h1 {
   grid-column: 1/-1;
 }
 #secretariat .person {
+  display: -ms-grid;
   display: grid;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   justify-items:center;
 }
 /* Registration/Other section */
 #registration {
   max-width: 100vw;
+  display: -ms-grid;
   display: grid;
   grid-gap: 10px;
   background-color: var(--surya);
   justify-items: center;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin-bottom: -20px;
 }
 #registration .container {
+  display:-ms-grid;
   display:grid;
   width: 70vw;
-  grid-template-columns: repeat(2, 1fr);
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
   grid-auto-rows: 100px;
   justify-items: center;
 }
@@ -252,7 +307,9 @@ p {
 #out{
   grid-column: 1/-1;
   grid-row: span 2;
-  align-self: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 #registration .container a {
   padding: 5px;
@@ -264,12 +321,16 @@ footer {
   background-color: #000;
   color: #fff;
   max-width: 100vw;
+  display: -ms-grid;
   display: grid;
   grid-gap: 10px;
   justify-items: center;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 30px 0;
-  grid-template-columns: 1fr 1fr 1fr;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
 }
 footer p {
   text-align: center;
@@ -303,7 +364,8 @@ footer h3 {
 @media all and (max-width:1200px) {
   /* Secretariat */
   #secretariat {
-    grid-template-columns: 1fr 1fr;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
   }
 }
 @media all and (max-width: 1070px) {
@@ -311,8 +373,8 @@ footer h3 {
   #navbar a {
     font-size: 18px;
   }
-  #fourth-est {grid-template-columns: 1fr}
-  #fourth-est img {justify-self: center;}
+  #fourth-est {-ms-grid-columns: 1fr;grid-template-columns: 1fr}
+  #fourth-est img {-ms-grid-column-align: center;justify-self: center;}
   #fourth-est p {
     max-width: 90vw;
     float: none;
@@ -324,7 +386,8 @@ footer h3 {
     font-size: 12px;
   }
   .addressal {
-    grid-template-columns: 1fr;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
   }
   .data h1 {
     font-size: 60px;
@@ -332,19 +395,27 @@ footer h3 {
 }
 @media all and (max-width: 800px) {
   /* footer */
-  #open {display:block;transition: transform 0.5s ease;}
+  #open {display:block;-webkit-transition: -webkit-transform 0.5s ease;transition: -webkit-transform 0.5s ease;-o-transition: transform 0.5s ease;transition: transform 0.5s ease;transition: transform 0.5s ease, -webkit-transform 0.5s ease;}
   #close {display: block;}
   #navbar {
     background: #333;
     width: 50vw;
     height: 100vh;
-    grid-template-columns: 1fr;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
     grid-auto-rows: 10vh;
-    transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+        -ms-transform: translateX(-100%);
+            transform: translateX(-100%);
+    -webkit-transition: -webkit-transform 0.5s ease;
+    transition: -webkit-transform 0.5s ease;
+    -o-transition: transform 0.5s ease;
     transition: transform 0.5s ease;
+    transition: transform 0.5s ease, -webkit-transform 0.5s ease;
   }
   footer {
-    grid-template-columns: 1fr;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
   }
   .data h1 {
     font-size: 48px;
@@ -352,12 +423,14 @@ footer h3 {
 }
 @media all and (max-width: 900px) {
   #registration .container {
-    grid-template-columns: 1fr;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
     grid-auto-rows: 100px;
   }
   #registration .container div {
     grid-column: span 1;
-    grid-row-start: auto;
+    -ms-grid-row: auto;
+        grid-row-start: auto;
   }
 }
 @media all and (max-width: 500px) {
@@ -375,18 +448,21 @@ footer h3 {
   }
   #registration .container div {
     grid-column: span 1;
-    grid-row-start: auto;
+    -ms-grid-row: auto;
+        grid-row-start: auto;
   }
   #registration .container h3 {
     font-size: 16px;
   }
   /* Secretariat */
   #secretariat {
-    grid-template-columns: 1fr;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
   }
   #secretariat h3 {font-size: 30px;}
   #committees {
-    grid-template-columns: 1fr;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
     justify-items: center;
   }
   .committee {
