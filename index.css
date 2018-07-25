@@ -49,8 +49,8 @@ p {
   -ms-flex-line-pack: center;
       align-content: center;
   max-width: 100vw;
-  -ms-grid-columns: (1fr)[7];
-      grid-template-columns: repeat(7, 1fr);
+  -ms-grid-columns: (1fr)[8];
+      grid-template-columns: repeat(8, 1fr);
   position: fixed;
 }
 #navbar a {
@@ -61,7 +61,7 @@ p {
   letter-spacing: 2px;
   padding: 10px;
   font-size: 20px;
-  font-weight: 900;
+  font-weight: 100;
   cursor: pointer;
 }
 #close {
@@ -367,6 +367,23 @@ footer h3 {
     -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
   }
+  #open {display:block;-webkit-transition: -webkit-transform 0.5s ease;transition: -webkit-transform 0.5s ease;-o-transition: transform 0.5s ease;transition: transform 0.5s ease;transition: transform 0.5s ease, -webkit-transform 0.5s ease;}
+#navbar {
+    background: #333;
+    width: 50vw;
+    height: 100vh;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    grid-auto-rows: 9vh;
+    -webkit-transform: translateX(-100%);
+        -ms-transform: translateX(-100%);
+            transform: translateX(-100%);
+    -webkit-transition: -webkit-transform 0.5s ease;
+    transition: -webkit-transform 0.5s ease;
+    -o-transition: transform 0.5s ease;
+    transition: transform 0.5s ease;
+    transition: transform 0.5s ease, -webkit-transform 0.5s ease;
+  }
 }
 @media all and (max-width: 1070px) {
   /* footer */
@@ -395,24 +412,7 @@ footer h3 {
 }
 @media all and (max-width: 800px) {
   /* footer */
-  #open {display:block;-webkit-transition: -webkit-transform 0.5s ease;transition: -webkit-transform 0.5s ease;-o-transition: transform 0.5s ease;transition: transform 0.5s ease;transition: transform 0.5s ease, -webkit-transform 0.5s ease;}
   #close {display: block;}
-  #navbar {
-    background: #333;
-    width: 50vw;
-    height: 100vh;
-    -ms-grid-columns: 1fr;
-        grid-template-columns: 1fr;
-    grid-auto-rows: 10vh;
-    -webkit-transform: translateX(-100%);
-        -ms-transform: translateX(-100%);
-            transform: translateX(-100%);
-    -webkit-transition: -webkit-transform 0.5s ease;
-    transition: -webkit-transform 0.5s ease;
-    -o-transition: transform 0.5s ease;
-    transition: transform 0.5s ease;
-    transition: transform 0.5s ease, -webkit-transform 0.5s ease;
-  }
   footer {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
