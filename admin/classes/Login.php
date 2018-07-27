@@ -19,10 +19,10 @@ class Login{
 		}
 		if(!$this->db_connection->connect_errno) {
 			$username = $this->db_connection->real_escape_string($_POST['username']);
-			$sql="SELECT * FROM  users WHERE username = {$username}";
+			$sql="SELECT * FROM  users WHERE username = '{$username}'";
 			$resultofcheck = $this->db_connection->query($sql);
 			if($resultofcheck->num_rows == 1) {
-				$resultrow = $resultofcheck0>fetch_object();
+				$resultrow = $resultofcheck->fetch_object();
 				if(password_verify($_POST['password'], $resultrow->password)) {
 					$_SESSION['username'] = $resultrow->username;
 					$_SESSION['login_status'] = 1;
@@ -38,6 +38,7 @@ class Login{
 	}
 	// Logout fn
 	public function doLogout() {
+		$_SESSION = array();
 		session_destroy();
 		$this->messages[] = "Logged out";
 	}

@@ -30,10 +30,10 @@ class Registration {
                 $password = $_POST['password'];
                 // the #encryption
                 $password_hash = password_hash($password, PASSWORD_DEFAULT);
-                $sql = "SELECT * FROM users WHERE username = {$username}";
+                $sql = "SELECT * FROM users WHERE username = '{$username}'";
                 $checkuser = $this->db_connection->query($sql);
                 if ($checkuser->num_rows == 1) {
-                    $this->errors[] = "Sorry username taken already";
+                    $this->errors[] = "This username is taken";
                 } else {
                     $sql = "INSERT INTO users (username, password)
                             VALUES('" . $username . "', '" . $password_hash . "');";

@@ -5,5 +5,5 @@
     if ($login->isUserLoggedIn()) {
         include("views/logged_in.php");
     } else {
-        include("view/not_logged_in.php");
+        include("views/not_logged_in.php");
     }
